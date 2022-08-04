@@ -1,0 +1,4 @@
+*/obj/
+*/bib/
+*.DS_Store
+appsettings.json
