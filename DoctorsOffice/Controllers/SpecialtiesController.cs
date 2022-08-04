@@ -49,5 +49,39 @@ namespace DocOffice.Controllers
       return RedirectToAction("Index");
     }
 
+    public ActionResult Edit(int id)
+    {
+      var thisSpecialty = _db.Specialties.FirstOrDefault(specialty => specialty.SpecialtyId == id);
+      ViewBag.DoctorId = new SelectList(_db.Doctors, "DoctorId", "Name");
+      return View(thisSpecialty);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Specialty specialty, int DoctorId)
+    {
+      if (DoctorId != 0)
+      {
+        _db.DoctorSpecialty.Add(new DoctorSpecialty() { DoctorId = DoctorId, SpecialtyId = specialty.SpecialtyId });
+      }
+      _db.Entry(specialty).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Delete(int id)
+    {
+      var thisSpecialty = _db.Specialties.FirstOrDefault(specialty => specialty.SpecialtyId == id);
+      return View(thisSpecialty);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisSpecialty = _db.Specialties.FirstOrDefault(specialty => specialty.SpecialtyId == id);
+      _db.Specialties.Remove(thisSpecialty);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
   }
 }

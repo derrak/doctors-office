@@ -1,1 +1,1 @@
-{"ContentRoots":["/Users/derrak/Desktop/doctors-office/DoctorsOffice/wwwroot/"],"Root":{"Children":null,"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
+{"ContentRoots":["/Users/derrak/Desktop/doctors-office/DoctorsOffice/wwwroot/"],"Root":{"Children":{"css":{"Children":{"styles.css":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"css/styles.css"},"Patterns":null}},"Asset":null,"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}

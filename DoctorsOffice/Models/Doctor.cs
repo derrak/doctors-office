@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-namespace DocOffice.Models{
+namespace DocOffice.Models
+{
   public class Doctor
   {
     public Doctor()
