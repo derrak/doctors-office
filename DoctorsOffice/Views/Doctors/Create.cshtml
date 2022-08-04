@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model DocOffice.Models.Doctor
+
+<h4>Add a new doctor</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
+  @Html.Label("Select specialty")
+  @Html.DropDownList("SpecialtyId", "No Specialties yet associated")
+
+  <input type="submit" value="Add new doctor" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all doctors", "Index")</p>
